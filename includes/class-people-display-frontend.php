@@ -176,6 +176,15 @@ class WSUWP_People_Display_Frontend {
 			add_filter( 'body_class', array( $this, 'body_class' ) );
 		}
 
+		if ( $this->people_query() ) {
+			wp_enqueue_style( 'wsu-people-display', plugin_dir_url( dirname( __FILE__ ) ) . 'css/people.css', array(), WSUWP_People_Display_Version() );
+			wp_enqueue_script( 'wsu-people-display', plugin_dir_url( dirname( __FILE__ ) ) . 'js/people.min.js', array( 'jquery' ), WSUWP_People_Display_Version() );
+		}
+
+		if ( $this->person_query() ) {
+			wp_enqueue_style( 'wsu-people-display', plugin_dir_url( dirname( __FILE__ ) ) . 'css/person.css', array(), WSUWP_People_Display_Version() );
+		}
+
 		return $template;
 	}
 
