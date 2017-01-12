@@ -106,27 +106,27 @@ class WSUWP_People_Display_Admin {
 		?>
 		<h1 class="wp-heading-inline">Edit Profile</h1>
 		<?php
-			$request_url = 'https://people.wsu.edu/wp-json/wp/v2/people/' . $id;
+		$request_url = 'https://people.wsu.edu/wp-json/wp/v2/people/' . $id;
 
-			$response = wp_remote_get( $request_url );
+		$response = wp_remote_get( $request_url );
 
-			if ( is_wp_error( $response ) ) {
-				return '<!-- ' . sanitize_text_field( $response->get_error_message() ) . ' -->';
-			}
+		if ( is_wp_error( $response ) ) {
+			return '<!-- ' . sanitize_text_field( $response->get_error_message() ) . ' -->';
+		}
 
-			$data = wp_remote_retrieve_body( $response );
+		$data = wp_remote_retrieve_body( $response );
 
-			if ( empty( $data ) ) {
-				return '<!-- empty -->';
-			}
+		if ( empty( $data ) ) {
+			return '<!-- empty -->';
+		}
 
-			$person = json_decode( $data );
+		$person = json_decode( $data );
 
-			if ( empty( $person ) ) {
-				return '<!-- empty -->';
-			}
+		if ( empty( $person ) ) {
+			return '<!-- empty -->';
+		}
 
-			$name = $person->title->rendered;
+		$name = $person->title->rendered;
 		?>
 		<p>Here's where you would edit <?php echo esc_html( $person->title->rendered ); ?>'s profile.</p>
 		<p>Finding the best way to pull in the profile interface will be a fun challenge.</p>
