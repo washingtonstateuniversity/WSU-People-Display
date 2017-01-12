@@ -51,7 +51,7 @@ $website = $person->website;
 		</h2>
 		<?php } ?>
 
-		<?php if ( $photo ) { ?>
+		<?php if ( ! $profile && in_array( 'photos', $wrapper_classes, true ) && $photo ) { ?>
 		<a class="photo" href="#">
 			<img src="https://people.wsu.edu/wp-content/uploads/sites/908/2015/07/HeadShot_Template2.jpg"
 				 data-photo="<?php echo esc_url( $photo ); ?>"
