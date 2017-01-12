@@ -32,10 +32,37 @@ function WSUWP_People_Display() {
 }
 
 /**
- * Retrieve the instance of the people settings page.
+ * Retrieve the instance of the admin page.
+ *
+ * @return WSUWP_People_Display_Admin
+ */
+function WSUWP_People_Display_Admin() {
+	return WSUWP_People_Display_Admin::get_instance();
+}
+
+/**
+ * Retrieve the instance of the list table.
+ *
+ * @return WSUWP_People_Display_Admin_List_Table
+ */
+function WSUWP_People_Display_Admin_List_Table() {
+	return WSUWP_People_Display_Admin_List_Table::get_instance();
+}
+
+/**
+ * Retrieve the instance of the settings page.
+ *
+ * @return WSUWP_People_Display_Admin_Settings
+ */
+function WSUWP_People_Display_Admin_Settings() {
+	return WSUWP_People_Display_Admin_Settings::get_instance();
+}
+
+/**
+ * Retrieve the instance of the frontend handler.
  *
  * @return WSUWP_People_Display_Settings
  */
-function WSUWP_People_Display_Settings() {
-	return WSUWP_People_Display_Settings::get_instance();
+function WSUWP_People_Display_Frontend() {
+	return WSUWP_People_Display_Frontend::get_instance();
 }

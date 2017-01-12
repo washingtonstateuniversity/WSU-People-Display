@@ -1,8 +1,8 @@
 <?php
 
-class WSUWP_People_Display_Settings {
+class WSUWP_People_Display_Admin_Settings {
 	/**
-	 * @var WSUWP_People_Display_Settings
+	 * @var WSUWP_People_Display_Admin_Settings
 	 *
 	 * @since 0.0.1
 	 */
@@ -13,11 +13,11 @@ class WSUWP_People_Display_Settings {
 	 *
 	 * @since 0.0.1
 	 *
-	 * @return \WSUWP_People_Display_Settings
+	 * @return \WSUWP_People_Display_Admin_Settings
 	 */
 	public static function get_instance() {
 		if ( ! isset( self::$instance ) ) {
-			self::$instance = new WSUWP_People_Display_Settings();
+			self::$instance = new WSUWP_People_Display_Admin_Settings();
 			self::$instance->setup_hooks();
 		}
 		return self::$instance;
@@ -42,16 +42,6 @@ class WSUWP_People_Display_Settings {
 	 * @since 0.0.1
 	 */
 	public function add_settings_page() {
-		add_menu_page(
-			'People',
-			'People Directory',
-			'manage_options',
-			'wsu-people',
-			array( $this, 'people_page' ),
-			'dashicons-groups',
-			58
-		);
-
 		add_submenu_page(
 			'wsu-people',
 			'WSU People Directory Settings',
@@ -60,21 +50,6 @@ class WSUWP_People_Display_Settings {
 			'wsu-people-settings',
 			array( $this, 'settings_page' )
 		);
-	}
-
-	/**
-	 * Output markup for the people list table.
-	 *
-	 * @since 0.0.1
-	 */
-	function people_page() {
-		?>
-		<div class="wrap">
-
-			<h1 class="wp-heading-inline">WSU People Directory</h1>
-
-		</div>
-		<?php
 	}
 
 	/**
