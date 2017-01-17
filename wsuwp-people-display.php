@@ -70,7 +70,7 @@ function WSUWP_People_Display_Admin_Settings() {
 /**
  * Retrieve the instance of the frontend handler.
  *
- * @return WSUWP_People_Display_Settings
+ * @return WSUWP_People_Display_Frontend
  */
 function WSUWP_People_Display_Frontend() {
 	return WSUWP_People_Display_Frontend::get_instance();
