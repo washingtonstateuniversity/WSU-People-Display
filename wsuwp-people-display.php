@@ -34,7 +34,7 @@ function WSUWP_People_Display() {
 /**
  * Retrieve the version number of the plugin for script enqueues.
  *
- * @return WSUWP_People_Display_Admin
+ * @return string
  */
 function WSUWP_People_Display_Version() {
 	return WSUWP_People_Display::$version;
