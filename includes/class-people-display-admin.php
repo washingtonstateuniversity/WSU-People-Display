@@ -111,7 +111,7 @@ class WSUWP_People_Display_Admin {
 		$response = wp_remote_get( $request_url );
 
 		if ( is_wp_error( $response ) ) {
-			echo '<!-- ' . sanitize_text_field( $response->get_error_message() ) . ' -->';
+			echo '<!-- ' . esc_attr( $response->get_error_message() ) . ' -->';
 		}
 
 		$data = wp_remote_retrieve_body( $response );
