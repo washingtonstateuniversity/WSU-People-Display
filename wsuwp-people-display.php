@@ -34,7 +34,7 @@ function WSUWP_People_Display() {
 /**
  * Retrieve the version number of the plugin for script enqueues.
  *
- * @return WSUWP_People_Display_Admin
+ * @return string
  */
 function WSUWP_People_Display_Version() {
 	return WSUWP_People_Display::$version;
@@ -70,7 +70,7 @@ function WSUWP_People_Display_Admin_Settings() {
 /**
  * Retrieve the instance of the frontend handler.
  *
- * @return WSUWP_People_Display_Settings
+ * @return WSUWP_People_Display_Frontend
  */
 function WSUWP_People_Display_Frontend() {
 	return WSUWP_People_Display_Frontend::get_instance();

@@ -111,22 +111,21 @@ class WSUWP_People_Display_Admin {
 		$response = wp_remote_get( $request_url );
 
 		if ( is_wp_error( $response ) ) {
-			return '<!-- ' . sanitize_text_field( $response->get_error_message() ) . ' -->';
+			echo '<!-- ' . sanitize_text_field( $response->get_error_message() ) . ' -->';
 		}
 
 		$data = wp_remote_retrieve_body( $response );
 
 		if ( empty( $data ) ) {
-			return '<!-- empty -->';
+			echo '<!-- empty -->';
 		}
 
 		$person = json_decode( $data );
 
 		if ( empty( $person ) ) {
-			return '<!-- empty -->';
+			echo '<!-- empty -->';
 		}
 
-		$name = $person->title->rendered;
 		?>
 		<p>Here's where you would edit <?php echo esc_html( $person->title->rendered ); ?>'s profile.</p>
 		<p>Finding the best way to pull in the profile interface will be a fun challenge.</p>
