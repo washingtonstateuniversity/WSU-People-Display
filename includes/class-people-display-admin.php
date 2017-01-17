@@ -126,7 +126,6 @@ class WSUWP_People_Display_Admin {
 			echo '<!-- empty -->';
 		}
 
-		$name = $person->title->rendered;
 		?>
 		<p>Here's where you would edit <?php echo esc_html( $person->title->rendered ); ?>'s profile.</p>
 		<p>Finding the best way to pull in the profile interface will be a fun challenge.</p>
